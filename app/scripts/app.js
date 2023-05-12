@@ -99,3 +99,36 @@ async function fetchProducts() {
 
 // Do more changes and publish update
     // infers all details
+
+// Resize my App Height to 800px using instance method
+
+// Can you convert my ticket sidebar app to a fullpage app
+
+// Refactor all the code  - done
+// Security check
+// GEnerate Unit Tests  -> create a file and add cases there 
+// Write docs 
+// Generate unit tests
+
+// for pack and publish
+  // first time -> ask details for new 
+  // later it infers
+
+  // changes
+// We can only publish to in development 
+  // to avoid any issues in customer account just test is supported
+
+
+// IParam for selecting some filters for showing products 
+// Search , add api keys , use iparams
+
+
+// Refactor all the code  - done
+// Security check
+// Write docs 
+
+// Resize my App to 800px using instance method
+// Got the response and added to appActivated Method
+
+// Can you convert my ticket sidebar app to a fullpage app
+// Updated the location to full page in manifest
