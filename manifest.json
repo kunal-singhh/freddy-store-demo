@@ -3,7 +3,7 @@
   "product": {
     "freshdesk": {
       "location": {
-        "ticket_sidebar": {
+        "contact_sidebar": {
           "url": "index.html",
           "icon": "styles/images/icon.svg"
         }
