@@ -7,12 +7,6 @@
           "url": "index.html",
           "icon": "styles/images/icon.svg"
         }
-      },
-      "requests": {
-        "fakeStoreGetProducts": {
-          "url": "https://fakestoreapi.com/products",
-          "method": "GET"
-       }
       }
     }
   },
