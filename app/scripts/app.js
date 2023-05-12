@@ -27,40 +27,19 @@ async function fetchProducts() {
   }
 }
 
-// Create a function that renders a list of products from fakeStore API and style it with crayons components inside an html page
+// Function that gets list of Products form fakeStore API and renders them as cards with crayons classes, please follow the following markup:
+// <div class="fw-card-1 fw-p-24 fw-flex fw-flex-row">
+//   <section class="fw-flex-grow">
+//     <h5 class="fw-type-h5 fw-my-0">Title</h5>
+//     <img height="60" width="60" src="http://placehold.it/" />
+//     <p class="fw-type-xs fw-my-0">description</p>
+//     <strong>price</strong>
+//   </section>
+//   <section class="fw-flex-grow-0">
+//     <fw-button color="secondary" class="fw-type-h6"> Change Status</fw-button>
+//   </section>
+// </div>
 
-    // function renderProductList(products) {
-    //   const container = document.getElementById("product-list");
-    //   products.forEach(product => {
-    //     const card = document.createElement('fw-card');
-    //     card.setAttribute('type', 'link');
-    //     card.setAttribute('thumbnail-src', product.image);
-    //     card.setAttribute('heading', product.title);
-    //     card.setAttribute('sub-heading', `$ ${product.price}`);
-    //     card.setAttribute('href', product.image);
-
-    //     const description = document.createElement('fw-label');
-    //     description.innerHTML = product.description;
-    //     card.appendChild(description);
-    //     container.appendChild(card);
-    //   });
-    //   document.body.appendChild(container);
-    // }
-
-
-    // Function that gets list of Products form fakeStore API and renders them as cards with crayons classes, please follow the following markup: 
-    // <div class="fw-card-1 fw-p-24 fw-flex fw-flex-row">
-    //   <section class="fw-flex-grow">
-    //     <h5 class="fw-type-h5 fw-my-0">Title</h5>
-    //     <img height="60" width="60" src="http://placehold.it/" />
-    //     <p class="fw-type-xs fw-my-0">description</p>
-    //     <strong>price</strong>
-    //   </section>
-    //   <section class="fw-flex-grow-0">
-    //     <fw-button color="secondary" class="fw-type-h6"> Change Status</fw-button>
-    //   </section>
-    // </div>
-    
 
     function renderProducts(products) {
       const productContainer = document.getElementById("product-list");
@@ -111,3 +90,12 @@ async function fetchProducts() {
 
 // Can you convert my ticket sidebar app to a fullpage app
 // Updated the location to full page in manifest
+
+// Run using Run app commands 
+
+// Pack and publish with the smae 
+
+// show the App in AMP
+
+// Do more changes and publish update
+    // infers all details
