@@ -1,0 +1,16 @@
+{
+  "getFakeStoreProducts": {
+    "schema": {
+      "method": "GET",
+      "host": "fakestoreapi.com",
+      "path": "/products",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    },
+    "options": {
+      "maxAttempts": 3,
+      "retryDelay": 1000
+    }
+  }
+}

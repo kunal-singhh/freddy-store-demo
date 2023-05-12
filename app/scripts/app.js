@@ -1,18 +1,113 @@
-var client;
+let client;
 
 init();
 
 async function init() {
   client = await app.initialized();
-  client.events.on('app.activated', renderText);
+  client.events.on('app.activated', appActivated);
 }
 
-async function renderText() {
-  document.querySelector('.main').innerHTML = "Hello, world!";
+async function appActivated() {
+  await client.instance.resize({ height: "800px" });
+  const products = await fetchProducts();
+  renderProducts(products);
 }
 
-// Function to call the FakeStore API products endpoint and return the result object using fdk request method template
+// Get FakeStore API products Data with request method template
+
+async function fetchProducts() {
+  try {
+    let productsResponse = await client.request.invokeTemplate(
+      "getFakeStoreProducts", {});
+    let productsJSON = JSON.parse(productsResponse.response);
+    return productsJSON
+  } catch (err) {
+    // Handle the error
+    console.error(err);
+  }
+}
+
+// Create a function that renders a list of products from fakeStore API and style it with crayons components inside an html page
+
+    // function renderProductList(products) {
+    //   const container = document.getElementById("product-list");
+    //   products.forEach(product => {
+    //     const card = document.createElement('fw-card');
+    //     card.setAttribute('type', 'link');
+    //     card.setAttribute('thumbnail-src', product.image);
+    //     card.setAttribute('heading', product.title);
+    //     card.setAttribute('sub-heading', `$ ${product.price}`);
+    //     card.setAttribute('href', product.image);
+
+    //     const description = document.createElement('fw-label');
+    //     description.innerHTML = product.description;
+    //     card.appendChild(description);
+    //     container.appendChild(card);
+    //   });
+    //   document.body.appendChild(container);
+    // }
 
 
+    // Function that gets list of Products form fakeStore API and renders them as cards with crayons classes, please follow the following markup: 
+    // <div class="fw-card-1 fw-p-24 fw-flex fw-flex-row">
+    //   <section class="fw-flex-grow">
+    //     <h5 class="fw-type-h5 fw-my-0">Title</h5>
+    //     <img height="60" width="60" src="http://placehold.it/" />
+    //     <p class="fw-type-xs fw-my-0">description</p>
+    //     <strong>price</strong>
+    //   </section>
+    //   <section class="fw-flex-grow-0">
+    //     <fw-button color="secondary" class="fw-type-h6"> Change Status</fw-button>
+    //   </section>
+    // </div>
+    
 
-// Create a function that renders a list of products from fakeStore API and style it with tailwind css 
+    function renderProducts(products) {
+      const productContainer = document.getElementById("product-list");
+
+      products.forEach(product => {
+        const card = document.createElement("div");
+        card.classList.add("fw-card-1", "fw-p-24", "fw-flex", "fw-flex-row");
+
+        const productInfo = document.createElement("section");
+        productInfo.classList.add("fw-flex-grow");
+
+        const title = document.createElement("h5");
+        title.classList.add("fw-type-h5", "fw-my-0");
+        title.textContent = product.title;
+
+        const image = document.createElement("img");
+        image.src = product.image;
+        image.setAttribute('width', 60);
+        image.setAttribute('height', 60);
+
+        const description = document.createElement("p");
+        description.classList.add("card-description");
+        description.classList.add("fw-type-xs", "fw-my-0");
+        description.textContent = product.description;
+
+        const price = document.createElement("strong");
+        price.textContent = `$${product.price}`;
+
+        const buttonSection = document.createElement("section");
+        buttonSection.classList.add("fw-flex-grow-0");
+
+        const changeStatusButton = document.createElement("fw-button");
+        changeStatusButton.setAttribute("color", "secondary");
+        changeStatusButton.classList.add("fw-type-h6");
+
+        const buttonText = document.createTextNode(" Change Status");
+        changeStatusButton.appendChild(buttonText);
+
+        buttonSection.appendChild(changeStatusButton);
+        productInfo.append(title, image, description, price);
+        card.append(productInfo, buttonSection);
+        productContainer.appendChild(card);
+      });
+    }
+
+// Resize my App to 800px using instance method
+// Got the response and added to appActivated Method
+
+// Can you convert my ticket sidebar app to a fullpage app
+// Updated the location to full page in manifest
