@@ -18,3 +18,10 @@ This app displays the name of the requester of a freshdesk ticket in the ticket_
     └── manifest.json             A JSON file holding meta data for app to run on platform
 
 Explore [more of app sample apps](https://community.developers.freshworks.com/t/freshworks-sample-apps/3604) on the Freshworks github respository.
+
+## Features 
+- FE
+    - Add a feature to write documenatiosn inside readme from freddy
+    - For the request for generate docs, we can have an option of copy as markdown
+- BE
+    - Support for a live account with AMP instead of dev stack 

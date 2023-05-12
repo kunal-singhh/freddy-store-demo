@@ -2,7 +2,7 @@
   "getFakeStoreProducts": {
     "schema": {
       "method": "GET",
-      "host": "fakestoreapi.com",
+      "host": "<%= iparam.hostName %>",
       "path": "/products",
       "headers": {
         "Content-Type": "application/json"
